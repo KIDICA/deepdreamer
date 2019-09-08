@@ -62,3 +62,8 @@ target/
 log.txt
 *.jpg
 *.jpeg
+
+*.gif
+*.jpg
+.vscode
+.idea

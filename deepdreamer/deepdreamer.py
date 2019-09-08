@@ -10,6 +10,7 @@ from subprocess import PIPE, Popen
 import numpy as np
 from caffe import Classifier, set_device, set_mode_gpu
 from deepdreamer.images2gif import writeGif
+import imageio
 from scipy.ndimage import affine_transform, zoom
 from PIL.Image import fromarray as img_fromarray, open as img_open
 import logging
@@ -193,9 +194,12 @@ def deepdream(
             frames = [img_open(f) for f in img_pool[::-1]]
         else:
             frames = [img_open(f) for f in img_pool]
-        writeGif(
-            "{}.gif".format(img_path), frames, duration=duration,
-            repeat=loop)
+        print("Writing...")
+        images = []
+        for filename in img_pool:
+            images.append(imageio.imread(filename))
+        imageio.mimsave("{}.gif".format(img_path), images, duration=duration)
+        #writeGif("{}.gif".format(img_path), frames, duration=duration, repeat=loop)
         print("gif created.")
 
 
