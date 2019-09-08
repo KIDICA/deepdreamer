@@ -67,3 +67,7 @@ log.txt
 *.jpg
 .vscode
 .idea
+venv
+
+web/public/upload/**
+!web/public/upload/empty

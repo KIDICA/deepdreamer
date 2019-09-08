@@ -1,0 +1,81 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://kidica.blob.core.windows.net/bootstrap-stable/css/bootstrap.min.css">
+
+    <style>
+        body {
+            padding: 1rem;
+            background: ghostwhite;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h3>DeepDream</h3>
+                <hr/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="card border-primary">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="m-0">Image</h5>
+                    </div>
+                    <div class="card-body p-1">
+                        <img class="rounded img-fluid" src="/upload/dream.jpg"/>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card border-success">
+                    <div class="card-header bg-success text-white">
+                        <h5 class="m-0">Dream</h5>
+                    </div>
+                    <div class="card-body p-1">
+                        <img class="rounded img-fluid" src="/upload/dream.jpg.gif"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <hr/>
+                <form>
+                    <div class="form-group row">
+                        <label class="col-2 col-form-label">Scale</label>
+                        <div class="col">
+                            <input class="form-control" onchange="document.getElementById('scale').value=this.value" name="scale" type="range" min="0.01" max="1.00" step="0.02" value="0.05"/>
+                        </div>
+                        <div class="col-1">
+                            <input id="scale" class="form-control" type="text" readonly/>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <hr/>
+                <form method="post" action="/upload" enctype="multipart/form-data">
+                    <input type="file" name="ufile" accept="image/jpg"/>
+                    <input class="btn btn-primary" type="submit" />
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>-->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+  </body>
+</html>
